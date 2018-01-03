@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE linkjava[
+
+        <!ELEMENT linkjava (action)>
+        <!ELEMENT action (do*)>
+        <!ELEMENT do (result*)>
+
+        <!ATTLIST do
+                name CDATA #REQUIRED
+                class CDATA #REQUIRED>
+
+        <!ELEMENT result (#PCDATA)>
+        <!ATTLIST result
+                name CDATA #IMPLIED
+                redirect (true|false) "false">
+
+        ]>
+
+<linkjava>
+    <action>
+        <do name="index" class="app.index.controller.Index">
+            <result name="login">login.jsp</result>
+            <result name="register">register.jsp</result>
+        </do>
+    </action>
+</linkjava>
